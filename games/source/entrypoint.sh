@@ -67,14 +67,17 @@ fi
 
 if [ "${SRCDS_APPID}" == "4020" ]; then
     cd ./garrysmod || exit 1
-    echo -e "Checking git version"
+    echo -e "Checking git version..."
     git --version
+    echo -e "Initializing git..."
+    git init
+    echo -e "Pulling the git repository..."
+    git pull https://${GIT_USERNAME}:${GIT_PERSONAL_TOKEN}@${GIT_URL}
+    echo -e "Git has finished Trying to boot the server now..."
     cd ../ || exit 1
+else
+    echo -e "Booting the server..."
 fi
-
-git --version
-
-echo -e "Now starting the server"
 
 # Display the command we're running in the output, and then execute it with the env
 # from the container itself.
