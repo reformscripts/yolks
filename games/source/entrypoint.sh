@@ -65,7 +65,13 @@ else
     echo -e "Not updating game server as auto update was set to 0. Starting Server"
 fi
 
-echo -e "Checking git version"
+if [ "${SRCDS_APPID}" == "4020" ]; then
+    cd /garrysmod || exit 1
+    echo -e "Checking git version"
+    git --version
+    cd ../
+fi
+
 git --version
 
 echo -e "Now starting the server"
