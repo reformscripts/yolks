@@ -66,10 +66,10 @@ else
 fi
 
 if [ "${SRCDS_APPID}" == "4020" ]; then
-    cd /home/container/garrysmod || exit 1
+    cd ./garrysmod || exit 1
     echo -e "Checking git version"
     git --version
-    cd /home/container
+    cd ../ || exit 1
 fi
 
 git --version
