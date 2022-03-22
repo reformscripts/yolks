@@ -65,6 +65,11 @@ else
     echo -e "Not updating game server as auto update was set to 0. Starting Server"
 fi
 
+echo -e "Checking git version"
+git --version
+
+echo -e "Now starting the server"
+
 # Display the command we're running in the output, and then execute it with the env
 # from the container itself.
 printf "\033[1m\033[33mcontainer@pterodactyl~ \033[0m%s\n" "$PARSED"
