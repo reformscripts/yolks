@@ -78,8 +78,9 @@ if [ "${SRCDS_APPID}" == "4020" ] && [ ! -z ${GIT_USERNAME} ] && [ ! -z ${GIT_PE
     git branch backup-main
     echo -e "Pushing git changes to server..."
     git reset --hard origin/main
-    echo -e "Git has finished Trying to boot the server now..."
+    echo -e "Git has finished!"
     cd ../ || exit 1
+    echo -e "Trying to boot the server now..."
 else
     echo -e "Booting the server..."
 fi
