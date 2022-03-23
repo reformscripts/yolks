@@ -75,9 +75,9 @@ if [ "${SRCDS_APPID}" == "4020" ] && [ ! -z ${GIT_USERNAME} ] && [ ! -z ${GIT_PE
     echo -e "Fetching git changes..."
     git fetch https://${GIT_USERNAME}:${GIT_PERSONAL_TOKEN}@${GIT_URL} main
     echo -e "Backing up local changes..."
-    git branch backup-main
+    git branch backup
     echo -e "Pushing git changes to server..."
-    git reset --hard origin/main
+    git reset --hard main
     echo -e "Git has finished!"
     cd ../ || exit 1
     echo -e "Trying to boot the server now..."
