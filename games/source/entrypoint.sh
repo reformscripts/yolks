@@ -66,7 +66,7 @@ else
 fi
 
 ## if game is garrys mod and git is set up
-if [ "${SRCDS_APPID}" == "4020" ] && [ -z ${GIT_USERNAME} ] && [ -z ${GIT_PERSONAL_TOKEN} ] && [ -z ${GIT_URL} ]; then
+if [ "${SRCDS_APPID}" == "4020" ] && [ ! -z ${GIT_USERNAME} ] && [ ! -z ${GIT_PERSONAL_TOKEN} ] && [ ! -z ${GIT_URL} ]; then
     cd ./garrysmod || exit 1
     echo -e "Checking git version..."
     git --version
