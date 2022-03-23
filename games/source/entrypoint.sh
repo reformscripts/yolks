@@ -71,8 +71,12 @@ if [ "${SRCDS_APPID}" == "4020" ]; then
     git --version
     echo -e "Initializing git..."
     git init
-    echo -e "Pulling the git repository..."
-    git pull https://${GIT_USERNAME}:${GIT_PERSONAL_TOKEN}@${GIT_URL}
+    echo -e "Fetching git changes..."
+    git fetch https://${GIT_USERNAME}:${GIT_PERSONAL_TOKEN}@${GIT_URL} main
+    echo -e "Backing up local changes..."
+    git branch backup-main
+    echo -e "Pushing git changes to server..."
+    git reset --hard origin/main
     echo -e "Git has finished Trying to boot the server now..."
     cd ../ || exit 1
 else
