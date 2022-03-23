@@ -75,9 +75,7 @@ if [ "${SRCDS_APPID}" == "4020" ] && [ ! -z ${GIT_USERNAME} ] && [ ! -z ${GIT_PE
     echo -e "Adding remote to our git..."
     git remote add origin https://${GIT_USERNAME}:${GIT_PERSONAL_TOKEN}@${GIT_URL}
     echo -e "Fetching git changes..."
-    git fetch -all
-    echo -e "Backing up local changes..."
-    git branch backup
+    git fetch --all
     echo -e "Pushing git changes to server..."
     git reset --hard origin/main
     echo -e "Git has finished!"
